@@ -17,3 +17,11 @@ public class Media
         return $"Id: {mediaId}\nTitle: {title}\nGenres: {string.Join(", ", genres)}\n";
     }
 }
+
+
+// Movie class is derived from Media class
+public class Movie : Media
+{
+    public string director { get; set; }
+    public TimeSpan runningTime { get; set; }
+}
