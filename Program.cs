@@ -20,15 +20,17 @@ Movie movie = new Movie
 
 Console.WriteLine(movie.Display());
 
-Album album = new Album
+
+Book book = new Book
 {
-    mediaId = 321,
-    title = "Greatest Album Ever, The (2020)",
-    artist = "Jeff's Awesome Band",
-    recordLabel = "Universal Music Group",
-    genres = { "Rock" }
+    mediaId = 111,
+    title = "Super Cool Book",
+    author = "Jeff Grissom",
+    pageCount = 101,
+    publisher = "",
+    genres = { "Suspense", "Mystery" }
 };
-Console.WriteLine(album.Display());
+Console.WriteLine(book.Display());
 
 
 logger.Info("Program ended");
