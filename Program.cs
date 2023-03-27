@@ -17,6 +17,7 @@ do
     // display choices to user
   Console.WriteLine("1) Add Movie");
   Console.WriteLine("2) Display All Movies");
+  Console.WriteLine("3) Find Movie");
   Console.WriteLine("Enter to quit");
   // input selection
   choice = Console.ReadLine();
@@ -67,7 +68,19 @@ do
     {
       Console.WriteLine(m.Display());
     }
+  } else if (choice == "3")
+  {
+    Console.WriteLine("Enter title to search");
+    var mInput = Console.ReadLine();
+    // LINQ - Where filter operator & Select projection operator & Contains quantifier operator
+    var titles = movieFile.Movies.Where(m => m.title.Contains(mInput)).Select(m => m.title);
+    // LINQ - Count aggregation method
+    Console.WriteLine($"There are {titles.Count()} movies with \"Shark\" in the title:");
+    foreach(string t in titles)
+    {
+        Console.WriteLine($"  {t}");
+    }
   }
-} while (choice == "1" || choice == "2");
+} while (choice == "1" || choice == "2" || choice == "3");
 
 logger.Info("Program ended");
